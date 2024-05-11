@@ -25,7 +25,7 @@ export default function SignIn() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
       const data = await res.json();
       console.log(data);
@@ -49,14 +49,14 @@ export default function SignIn() {
           type="email"
           placeholder="email"
           className="border p-3 rounded-lg"
-          id="email"
+          name="email"
           onChange={handleChange}
         />
         <input
           type="password"
           placeholder="password"
           className="border p-3 rounded-lg"
-          id="password"
+          name="password"
           onChange={handleChange}
         />
         <button
@@ -66,7 +66,7 @@ export default function SignIn() {
         >
           {loading ? "Loading..." : "Sign In"}
         </button>
-        <OAuth/>
+        <OAuth />
       </form>
       <div className="flex gap-2 mt-5">
         <p>Dont have an account?</p>
