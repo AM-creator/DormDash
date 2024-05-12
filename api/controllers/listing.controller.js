@@ -92,7 +92,7 @@ export const getListings = async (req, res, next) => {
 
     const listings = await Listing.find({
       // searchTerm as subString
-      name: { $regex: searchTerm, $options: "i" },
+      title: { $regex: searchTerm, $options: "i" },
       furnished,
       parking,
       type,
