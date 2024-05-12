@@ -7,7 +7,11 @@ const listingSchema = new mongoose.Schema(
       required: true,
     },
     university: {
-      type: Array,
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
       required: true,
     },
     description: {

@@ -18,6 +18,7 @@ export default function CreateListing() {
     title: "",
     description: "",
     university: "",
+    address: "",
     type: "",
     bedrooms: 0,
     bathrooms: 0,
@@ -25,11 +26,11 @@ export default function CreateListing() {
     parking: false,
     furnished: false,
   });
+  console.log(formData);
   const [imageUploadError, setImageUploadError] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  console.log(formData);
 
   const handleImageSubmit = (e) => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
@@ -90,6 +91,7 @@ export default function CreateListing() {
     setFormData({
       ...formData,
       imageUrls: formData.imageUrls.filter((_, i) => i !== index),
+      // _ is a placeholder for an unused function argument.
     });
   };
 
@@ -165,13 +167,22 @@ export default function CreateListing() {
             minLength="10"
             required
             onChange={handleChange}
-            value={formData.name}
+            value={formData.title}
           />
           <input
             type="text"
             placeholder="University"
             className="border p-3 rounded-lg"
             name="university"
+            required
+            onChange={handleChange}
+            value={formData.university}
+          />
+          <input
+            type="text"
+            placeholder="Address"
+            className="border p-3 rounded-lg"
+            name="address"
             required
             onChange={handleChange}
             value={formData.address}
