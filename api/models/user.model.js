@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema(
     avatar: {
       type: String,
       default:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9bzWbObcb7ZJbbLu63Q5dhSFa36iz1n1YjosbIhkJIg&s",
+        "https://firebasestorage.googleapis.com/v0/b/dormdash-69b69.appspot.com/o/UserImage.png?alt=media&token=806170ad-6b5f-4c13-82da-7231c65f315d",
     },
   },
   { timestamps: true }
