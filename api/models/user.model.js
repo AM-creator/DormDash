@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema(
         "https://firebasestorage.googleapis.com/v0/b/dormdash-69b69.appspot.com/o/UserImage.png?alt=media&token=806170ad-6b5f-4c13-82da-7231c65f315d",
     },
   },
+
   { timestamps: true }
 );
 
