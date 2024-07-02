@@ -92,7 +92,10 @@ export const getListings = async (req, res, next) => {
 
     const listings = await Listing.find({
       // searchTerm as subString
-      title: { $regex: searchTerm, $options: "i" },
+      $or: [
+        { title: { $regex: searchTerm, $options: "i" } },
+        { university: { $regex: searchTerm, $options: "i" } }, // Search in university field as well
+      ],
       furnished,
       parking,
       type,
